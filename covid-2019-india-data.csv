@@ -1,0 +1,44 @@
+﻿Date,State,District.or.Locality,Confirmed,Deaths,Recovered
+30-Jan-20,Kerala,Thrissur,1,0,0
+1-Feb-20,Kerala,Alappuzha,1,0,0
+3-Feb-20,Kerala,Kasargod,1,0,0
+13-Feb-20,Kerala,Alappuzha,0,0,1
+14-Feb-20,Kerala,Thrissur,0,0,1
+14-Feb-20,Kerala,Kasargod,0,0,1
+2-Mar-20,Delhi,NA,1,0,0
+2-Mar-20,Telangana,Hyderabad,1,0,0
+2-Mar-20,Rajasthan,Jaipur,1,0,0
+3-Mar-20,Rajasthan,Jaipur,1,0,0
+5-Mar-20,Uttar Pradesh,Ghaziabad,1,0,0
+5-Mar-20,Uttar Pradesh,Agra,6,0,0
+5-Mar-20,Delhi,ITBP Quarantine Facility,15,0,0
+5-Mar-20,Haryana,Gurgaon,1,0,0
+6-Mar-20,Delhi,West Delhi,1,0,0
+7-Mar-20,Ladakh,NA,2,0,0
+7-Mar-20,Tamil Nadu,Kancheepuram,1,0,0
+8-Mar-20,Kerala,Pathanamthitta,5,0,0
+8-Mar-20,Delhi,West Delhi,1,0,0
+8-Mar-20,Jammu & Kashmir,Jammu,1,0,0
+8-Mar-20,Uttar Pradesh,Agra,1,0,0
+9-Mar-20,Kerala,Pathanamthitta,1,0,0
+9-Mar-20,Punjab,Hoshiarpur,1,0,0
+9-Mar-20,Karnataka,Bengaluru,1,0,0
+10-Mar-20,Kerala,Pathanamthitta,3,0,0
+10-Mar-20,Kerala,Ernakulam,5,0,0
+10-Mar-20,Maharashtra,Pune,5,0,0
+10-Mar-20,Karnataka,Bengaluru,3,0,0
+10-Mar-20,Delhi,NA,1,0,0
+11-Mar-20,Rajasthan,Jaipur,1,0,0
+11-Mar-20,Maharashtra,Pune,3,0,0
+12-Mar-20,Karnataka,Kalburgi,1,1,0
+12-Mar-20,Kerala,Kannur,1,0,0
+12-Mar-20,Kerala,Thrissur,1,0,0
+12-Mar-20,Maharashtra,Pune,1,0,0
+12-Mar-20,Maharashtra,Mumbai,2,0,0
+12-Mar-20,Maharashtra,Nagpur,1,0,0
+12-Mar-20,Uttar Pradesh,Lucknow,1,0,0
+12-Mar-20,Uttar Pradesh,Noida,2,0,0
+12-Mar-20,Uttar Pradesh,Ghaziabad,1,0,0
+12-Mar-20,Ladakh,NA,1,0,0
+12-Mar-20,Delhi,West Delhi,1,0,0
+12-Mar-20,Andhra Pradesh,Nellore,1,0,0
