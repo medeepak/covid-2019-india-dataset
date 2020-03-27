@@ -1,10 +1,13 @@
 ﻿Date,State,District.or.Locality,Sex,Age,Age.Group,Preexisiting.Conditions,Misc.Information,Count
 12-Mar-20,Karnataka,Kalburgi,M,76,70-80,Yes,Hyper Tension; Asthma,1
 14-Mar-20,Delhi,West Delhi,F,68,60-60,Yes,Co-morbid conditions,1
-16-Mar-20,Maharashtra,Mumbai,M,63,60-60,Yes,High blood pressure; Inflammation of heart muscles,1
+16-Mar-20,Maharashtra,Mumbai,M,63,60-70,Yes,High blood pressure; Inflammation of heart muscles,1
 19-Mar-20,Punjab,Nawanshahr,M,72,70-80,Yes,Hyper Tension; Diabetes,1
 22-Mar-20,Gujarat,Surat,M,69,60-70,Yes,Co-morbid conditions,1
 22-Mar-20,Bihar,Patna,M,38,30-40,Yes,Kidney Problems,1
 22-Mar-20,Maharashtra,Mumbai,M,63,60-70,Yes,Diabetes; high blood pressure,1
 23-Mar-20,West Bengal,NA,NA,NA,NA,NA,NA,1
 23-Mar-20,Himachal Pradesh,NA,NA,NA,NA,NA,NA,1
+24-Mar-20,Maharashtra,Mumbai,M,64,60-70,NA,NA,1
+24-Mar-20,Tamil Nadu,Madurai,M,54,50-60,Yes,Hyper Tension; Diabetes,1
+25-Mar-20,Madhya Pradesh,NA,F,NA,NA,NA,NA,1

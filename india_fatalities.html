@@ -16,168 +16,207 @@
     <script src="https://d3js.org/d3-queue.v3.min.js"></script>
     <script src="https://d3js.org/topojson.v1.min.js"></script>
     <script type="text/javascript">
-        
-(function() {
-    d3.queue()
-      .defer(d3.json, "india_states_2.json")
-      .await(function(error, topoMap) {
-        if (error) throw error;
-        var states = topojson.feature(topoMap, topoMap.objects.ne_10m_admin_1_India_Official);
-    
-        // Map render
-        var map = stateMap(states.features).width(800).height(700).scale(1200);
-        d3.select("#map").call(map);
-    });
-}());
 
-function splitlines(t) { return t.split(/\r\n|\r|\n/); }
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", 'covid-19-india-fatalities-dataset.csv', false);
+        rawFile.overrideMimeType("text/csv");
+        rawFile.send(null);
+        if(rawFile.status == 200) {
+            glo_allText = rawFile.responseText;  
 
-function splitbycomma(t) { return t.split(/,/); }
+        }
+        allText = rawFile.responseText;
+        allTextArr = splitlines(allText);
+        arrayLength = allTextArr.length;
 
-function stateValue(stateName) {
-                d3.csv("stateslived.csv", function(data) {
+        (function() {
+            d3.queue()
+              .defer(d3.json, "india_states_2.json")
+              .await(function(error, topoMap) {
+                if (error) throw error;
+                var states = topojson.feature(topoMap, topoMap.objects.ne_10m_admin_1_India_Official);
+            
+                // Map render
+                var map = stateMap(states.features).width(800).height(700).scale(1200);
+                d3.select("#map").call(map);
+            });
+        }());
 
-                    for (var i = 0; i < data.length; i++) {
+        function splitlines(t) { return t.split(/\r\n|\r|\n/); }
 
-                        // Grab State Name
-                        var dataState = data[i].state;
-                        // Grab data value 
-                        var dataValue = data[i].visited;
-                        if(stateName == dataState) {
-                            //console.log(stateName);
-                            window.val = stateName;
-                            //console.log(val);
-                            console.log(window.val);
+        function splitbycomma(t) { return t.split(/,/); }
+
+        function stateValue(stateName) {
+                        d3.csv("stateslived.csv", function(data) {
+
+                            for (var i = 0; i < data.length; i++) {
+
+                                // Grab State Name
+                                var dataState = data[i].state;
+                                // Grab data value 
+                                var dataValue = data[i].visited;
+                                if(stateName == dataState) {
+                                    //console.log(stateName);
+                                    window.val = stateName;
+                                    //console.log(val);
+                                }
+                                else {
+                                    window.val = "Test";
+                                } 
+                            }          
+                        });
+           // console.log(window.val);
+
+            return window.val;
+        }
+
+        function stateMap(states) {
+
+            var width  = 800, height = 700, scale = 1200;
+            var color  = ["#ffffff", "#dcbdbc", "#c89a9e", "#ba7d80", "#a3516a"]
+            
+            function render(selection) {
+              selection.each(function() {
+
+                d3.select(this).select("svg").remove();
+                var svg = d3.select(this).append("svg")
+                            .attr("width", width)
+                            .attr("height", height);
+
+                var projection = d3.geo.mercator()
+                    .center([83, 23])
+                    .scale(scale)
+                    .translate([width / 2, height / 2]);
+            
+                var path = d3.geo.path().projection(projection);
+                var selectState  = svg.selectAll("g").data(states).enter().append("g").attr("class", "state");
+
+                selectState.append("path")
+                    .style("fill", function(d) { 
+                        fatalities_count=0;
+                        /*var rawFile = new XMLHttpRequest();
+                        rawFile.open("GET", 'covid-19-india-fatalities-dataset.csv', false);
+                        rawFile.overrideMimeType("text/csv");
+                        rawFile.send(null);
+                        if(rawFile.status == 200) {
+                            allText = rawFile.responseText;
+                            allTextArr = splitlines(allText);
+                            arrayLength = allTextArr.length;*/
+
+                            for (var i = 0; i < arrayLength; i++){
+                                lineArr=splitbycomma(allTextArr[i]);
+                                lineArrLength=lineArr.length;
+                                if(d.properties.name == lineArr[1]){            
+                                    fatalities_count = +fatalities_count + +lineArr[8];
+                                }
+                            }
+                        //}
+                        //allText = rawFile.responseText;
+
+                        if(fatalities_count <1) {
+                           return color[0]; 
+                        }
+                        if(fatalities_count <2) {
+                            return color[1]; 
+                        }
+                        if(fatalities_count <3) {
+                            return color[2]; 
+                        }
+                        if(fatalities_count <4) {
+                            return color[2]; 
+                        }
+                        return color[3]; 
+                    })
+                    .attr("d", path)
+                    .style("stroke", "#000")
+                    .style("stroke-width", "1px");
+                var fatalities_count = 0;
+                var centroid;  
+                svg.selectAll("text").data(states).enter().append("text")
+                    .attr("class", function(d) { return "label " + d.id; })
+                    .attr("transform", function(d) { centroid = path.centroid(d); return "translate(" + path.centroid(d) + ")"; })
+                    .attr("dy", ".35em")
+                    .text(function(d) { 
+                        fatalities_count=0;
+                        var rawFile = new XMLHttpRequest();
+                        rawFile.open("GET", 'covid-19-india-fatalities-dataset.csv', false);
+                        rawFile.overrideMimeType("text/csv");
+                        rawFile.send(null);
+                        if(rawFile.status == 200) {
+                            allText = rawFile.responseText;
+                            allTextArr = splitlines(allText);
+                            arrayLength = allTextArr.length;
+
+                            for (var i = 0; i < arrayLength; i++){
+                                lineArr=splitbycomma(allTextArr[i]);
+                                lineArrLength=lineArr.length;
+                                if(d.properties.name == lineArr[1]){            
+                                    fatalities_count = +fatalities_count + +lineArr[8];
+                                }
+                            }
+                        }
+                        allText = rawFile.responseText;
+                    
+                    if(fatalities_count > 0 ) {
+                        return fatalities_count;
+                    }    
+                    
+                    return "";
+
+                    });
+                svg.selectAll("circle").data(states).enter()
+                .append("circle")
+                //.attr("cx", projection([19.0760,72.8777])[0] + +1013.7671)
+                //.attr("cy", projection([19.0760,72.8777])[1] + +1989.13169)
+                //.attr("r",100)
+                //.attr("cx", projection([72.8777, 19.0760])[0] )
+                .attr("cx", projection([77.1025, 28.7041])[0])
+                .attr("cy", projection([77.1025, 28.7041])[1])
+                //.attr("cx", 83)
+                //.attr("cy", 23)
+                //.attr("cx", 247.8924)
+                //.attr("cx", 141.097742)
+                .attr("r",function(d) { console.log(projection([72.8777, 19.0760]));  console.log((+19.0760 - +6.74555084800015)/(+0.003031196388938884)); console.log(scale); return 10 })
+                .style("fill", "rgb(217,91,67)")
+                .style("opacity", 0.03);
+
+                /*selectState.append('line')
+                    .style('stroke', "#000")
+                    .style("stroke-width", "1px")
+                    .attr('x1', function(d) {return path.centroid(d)[0]})
+                    .attr('y1', function(d) {return path.centroid(d)[1]})
+                    .attr('x2', function(d) { 
+                        if (+path.centroid(d)[0] < 300) {
+                            return (50)
                         }
                         else {
-                            window.val = "Test";
-                            console.log(window.val);
-                        } 
-                    }          
-                });
-   // console.log(window.val);
-
-    return window.val;
-}
-
-function stateMap(states) {
-
-    var width  = 800, height = 700, scale = 1200;
-    var color  = ["#ebdada", "#dcbdbc", "#c89a9e", "#ba7d80", "a3516a"]
-    
-    function render(selection) {
-      selection.each(function() {
-
-        d3.select(this).select("svg").remove();
-        var svg = d3.select(this).append("svg")
-                    .attr("width", width)
-                    .attr("height", height);
-
-        var projection = d3.geo.mercator()
-            .center([83, 23])
-            .scale(scale)
-            .translate([width / 2, height / 2]);
-    
-        var path = d3.geo.path().projection(projection);
-        var selectState  = svg.selectAll("g").data(states).enter().append("g").attr("class", "state");
-
-        selectState.append("path")
-            .style("fill", function(d) { 
-                fatalities_count=0;
-                var rawFile = new XMLHttpRequest();
-                rawFile.open("GET", 'covid-19-india-fatalities-dataset.csv', false);
-                rawFile.overrideMimeType("text/csv");
-                rawFile.send(null);
-                if(rawFile.status == 200) {
-                    allText = rawFile.responseText;
-                    allTextArr = splitlines(allText);
-                    arrayLength = allTextArr.length;
-
-                    for (var i = 0; i < arrayLength; i++){
-                        lineArr=splitbycomma(allTextArr[i]);
-                        lineArrLength=lineArr.length;
-                        if(d.properties.name == lineArr[1]){            
-                            fatalities_count = +fatalities_count + +lineArr[8];
+                            return (500)
                         }
-                    }
-                }
-                allText = rawFile.responseText;
-                console.log(fatalities_count);
+                })
+                    .attr('y2', function(d) { return (+path.centroid(d)[1])});*/
 
-                if(fatalities_count <1) {
-                   return color[0]; 
-                }
-                if(fatalities_count <2) {
-                    return color[1]; 
-                }
-                if(fatalities_count <3) {
-                    return color[2]; 
-                }
-                if(fatalities_count <4) {
-                    return color[2]; 
-                }
-                return color[3]; 
-            })
-            .attr("d", path)
-            .style("stroke", "#000")
-            .style("stroke-width", "1px");
-        var fatalities_count = 0;  
-        svg.selectAll("text").data(states).enter().append("text")
-            .attr("class", function(d) { return "label " + d.id; })
-            .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
-            .attr("dy", ".35em")
-            .text(function(d) { 
-                fatalities_count=0;
-                var rawFile = new XMLHttpRequest();
-                rawFile.open("GET", 'covid-19-india-fatalities-dataset.csv', false);
-                rawFile.overrideMimeType("text/csv");
-                rawFile.send(null);
-                if(rawFile.status == 200) {
-                    allText = rawFile.responseText;
-                    allTextArr = splitlines(allText);
-                    arrayLength = allTextArr.length;
+              });
 
-                    for (var i = 0; i < arrayLength; i++){
-                        lineArr=splitbycomma(allTextArr[i]);
-                        lineArrLength=lineArr.length;
-                        console.log(lineArr[8]);
-                        if(d.properties.name == lineArr[1]){            
-                            fatalities_count = +fatalities_count + +lineArr[8];
-                        }
-                    }
-                }
-                allText = rawFile.responseText;
-                console.log(fatalities_count);
-            
-            if(fatalities_count > 0 ) {
-                return fatalities_count;
-            }    
-            
-            return "";
+            } // render
 
-            });
-      });
-    } // render
-
-    render.height = function(value) {
-                console.log(value);
-                if (!arguments.length) return height;
-                height = value;
-                return render;
-            };
-    render.width = function(value) {
-                if (!arguments.length) return width;
-                width = value;
-                return render;
-            };
-    render.scale = function(value) {
-                if (!arguments.length) return scale;
-                scale = value;
-                return render;
-            };
-  
-return render;
-}
+            render.height = function(value) {
+                        if (!arguments.length) return height;
+                        height = value;
+                        return render;
+                    };
+            render.width = function(value) {
+                        if (!arguments.length) return width;
+                        width = value;
+                        return render;
+                    };
+            render.scale = function(value) {
+                        if (!arguments.length) return scale;
+                        scale = value;
+                        return render;
+                    };
+          
+        return render;
+        }
 
     </script>
 
