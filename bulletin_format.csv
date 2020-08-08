@@ -1,0 +1,5 @@
+﻿state,date_format,url_prepend,url_append,location_to_download
+odisha,%d%m%Y,https://health.odisha.gov.in/pdf/news-covid-19-press-meet-,Eng.pdf,~/Documents/datasciencecourse/github_root/covid19india-officialbulletins/odisha/
+karanataka,%d-%m-%Y,https://karunadu.karnataka.gov.in/hfw/kannada/nCovDocs/,(English).pdf,~/Documents/datasciencecourse/github_root/covid19india-officialbulletins/karnataka/
+maharashtra,%d,https://arogya.maharashtra.gov.in/pdf/covidepressnote,.pdf,~/Documents/datasciencecourse/github_root/covid19india-officialbulletins/maharashtra/
+telangana,%d-%m-%Y,https://covid19.telangana.gov.in/wp-content/uploads/2020/04/Telangana-Health-Department-Media-bulletin-,.pdf,~/Documents/datasciencecourse/github_root/covid19india-officialbulletins/telangana/

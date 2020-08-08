@@ -1,0 +1,11 @@
+library(jsonlite)
+library(dplyr)
+library(ggplot2)
+library(forcats)
+library(jpeg)
+library(grid)
+library(ggpubr)
+library(ggimage)
+
+raw_data <- readLines("https://api.covid19india.org/data.json")
+data <- as.data.frame(t(sapply(raw_data, fromJSON)))

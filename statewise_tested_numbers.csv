@@ -1,0 +1,183 @@
+Date,State,Total Tested,Positive
+1/4/20,Delhi,2621,
+1/4/20,West Bengal,659,37
+1/4/20,Kerala,7965,265
+2/4/20,Kerala,8456,286
+2/4/20,Andhra Pradesh,1800,132
+2/4/20,Assam,962,16
+2/4/20,Chandigarh,124,18
+2/4/20,Chhattisgarh,1232,9
+2/4/20,Goa,220,5
+2/4/20,Punjab,1434,37
+2/4/20,Uttarakhand,678,7
+3/4/20,Haryana,1325,44
+3/4/20,Karnataka,4587,128
+3/4/20,Kerala,9139,295
+3/4/20,Odisha,1395,20
+3/4/20,Tamil Nadu,3684,411
+4/4/20,West Bengal,1042,
+4/2/20,Kerala,9744,306
+5/4/20,Madhya Pradesh,2812,193
+5/4/20,Uttar Pradesh,5255,278
+5/4/20,Bihar,3037,32
+5/4/20,Jammu and Kashmir,1551,106
+5/4/20,Kerala,10221,314
+5/4/20,Rajasthan,12279,260
+5/4/20,Arunachal Pradesh,,
+5/4/20,Assam,,
+5/4/20,Bihar,3037,32
+5/4/20,Uttar Pradesh,5255,278
+5/4/20,Uttarakhand,,
+5/4/20,Maharashtra,16008,
+6/4/20,Maharashtra,17563,868
+6/4/20,Nagaland,60,0
+6/4/20,Kerala,10716,327
+6/4/20,Mizoram,58,1
+6/4/20,West Bengal,1301,
+7/4/20,Madhya Pradesh,3770,290
+7/4/20,Odisha,2190,40
+7/4/20,Haryana,2520,141
+7/4/20,Uttarakhand,1289,32
+7/4/20,Rajasthan,17638,363
+7/4/20,West Bengal,1487,
+7/4/20,Kerala,11232,336
+7/4/20,Maharashtra,20877,1018
+7/4/20,Mizoram,58,1
+7/4/20,Odisha,2441,42
+7/4/20,Delhi,9041,576
+7/4/20,Karnataka,6580,175
+8/4/20,Gujarat,4224,186
+8/4/20,Tamil Nadu,5305,690
+8/4/20,Bihar,4596,38
+8/4/20,Punjab,2937,106
+8/4/20,Kerala,11986,354
+8/4/20,Odisha,2441,42
+8/4/20,Madhya Pradesh,4056,341
+8/4/20,Mizoram,74,1
+8/4/20,Rajasthan,17638,363
+8/4/20,Haryana,2650,153
+8/4/20,Chandigarh,184,18
+8/4/20,Karnataka,6967,181
+9/4/20,Rajasthan,19107,463
+9/4/20,Arunachal Pradesh,206,1
+9/4/20,West Bengal,1889,
+9/4/20,Uttar Pradesh,8402,410
+9/4/20,Uttarakhand,1531,35
+9/4/20,Karnataka,7613,197
+9/4/20,Haryana,2964,156
+9/4/20,Madhya Pradesh,5135,411
+9/4/20,Goa,344,7
+9/4/20,Maharashtra,20877,868
+9/4/20,Mizoram,84,1
+9/4/20,Odisha,3249,48
+9/4/20,Kerala,12710,258
+9/4/20,Punjab,3192,130
+9/4/20,Bihar,4991,43
+9/4/20,Gujarat,,
+9/4/20,Tamil Nadu,7267,834
+9/4/20,Kerala,12710,357
+9/4/20,Delhi,9968,720
+10/4/20,Andhra Pradesh,6374,365
+10/4/20,Assam,2863,29
+10/4/20,Bihar,5457,60
+10/4/20,Chandigarh,223,19
+10/4/20,Chhattisgarh,3473,18
+10/4/20,Delhi,11061,903
+10/4/20,Goa,354,7
+10/4/20,Gujarat,7718,378
+10/4/20,Haryana,3527,162
+10/4/20,Himachal Pradesh,900,30
+10/4/20,Jammu and Kashmir,2961,207
+10/4/20,Jharkhand,1681,14
+10/4/20,Karnataka,7975,207
+10/4/20,Kerala,13339,364
+10/4/20,Madhya Pradesh,7049,451
+10/4/20,Maharashtra,30000,1135
+10/4/20,Mizoram,,
+10/4/20,Nagaland,70,0
+10/4/20,Odisha,3547,50
+10/4/20,Punjab,3461,151
+10/4/20,Rajasthan,22349,561
+10/4/20,Tamil Nadu,8410,911
+10/4/20,Telangana,,
+10/4/20,Uttarakhand,1688,35
+10/4/20,Uttar Pradesh,9332,433
+10/4/20,West Bengal,2095,
+11/4/20,Andhra Pradesh,6958,381
+11/4/20,Assam,3011,29
+11/4/20,Bihar,6250,61
+11/4/20,Chandigarh,264,19
+11/4/20,Chhattisgarh,3858,18
+11/4/20,Delhi,11709,1069
+11/4/20,Goa,,
+11/4/20,Gujarat,9763,468
+11/4/20,Haryana,3663,165
+11/4/20,Himachal Pradesh,900,30
+11/4/20,Jammu and Kashmir,3206,224
+11/4/20,Jharkhand,1912,17
+11/4/20,Karnataka,8560,215
+11/4/20,Kerala,14163,373
+11/4/20,Madhya Pradesh,8516,529
+11/4/20,Maharashtra,31841,1761
+11/4/20,Mizoram,,
+11/4/20,Nagaland,70,0
+11/4/20,Odisha,3551,51
+11/4/20,Punjab,3909,158
+11/4/20,Rajasthan,24857,678
+11/4/20,Tamil Nadu,9842,969
+11/4/20,Tripura,337,2
+11/4/20,Uttarakhand,1705,35
+11/4/20,Uttar Pradesh,10595,452
+11/4/20,West Bengal,2286,126
+12/4/20,Andhra Pradesh,6958,405
+12/4/20,Assam,3138,29
+12/4/20,Bihar,6703,64
+12/4/20,Chandigarh,279,21
+12/4/20,Chhattisgarh,3945,31
+12/4/20,Delhi,14036,1154
+12/4/20,Goa,406,7
+12/4/20,Gujarat,11715,516
+12/4/20,Haryana,3903,181
+12/4/20,Himachal Pradesh,1113,32
+12/4/20,Jammu and Kashmir,3600,3355
+12/4/20,Jharkhand,2117,17
+12/4/20,Karnataka,9251,8831
+12/4/20,Kerala,14989,375
+12/4/20,Madhya Pradesh,10481,562
+12/4/20,Maharashtra,35668,1761
+12/4/20,Mizoram,87,1
+12/4/20,Nagaland,74,0
+12/4/20,Odisha,3862,3808
+12/4/20,Punjab,4281,170
+12/4/20,Rajasthan,28505,796
+12/4/20,Tamil Nadu,10655,1075
+12/4/20,Telangana,,
+12/4/20,Uttarakhand,1820,35
+12/4/20,Uttar Pradesh,11855,483
+12/4/20,West Bengal,2523,134
+13/04/2020,Andhra Pradesh,8755,432
+13/04/2020,Assam,,
+13/04/2020,Bihar,7263,65
+13/04/2020,Chandigarh,296,21
+13/04/2020,Chhattisgarh,4377,31
+13/04/2020,Delhi,15032,1510
+13/04/2020,Goa,440,7
+13/04/2020,Gujarat,14251,572
+13/04/2020,Haryana,4489,182
+13/04/2020,Himachal Pradesh,1210,32
+13/04/2020,Jammu and Kashmir,4065,270
+13/04/2020,Jharkhand,2523,19
+13/04/2020,Karnataka,10017,247
+13/04/2020,Kerala,15683,378
+13/04/2020,Madhya Pradesh,,
+13/04/2020,Maharashtra,39725,1996
+13/04/2020,Mizoram,,
+13/04/2020,Nagaland,,
+13/04/2020,Odisha,4170,4116
+13/04/2020,Punjab,4480,176
+13/04/2020,Rajasthan,31804,847
+13/04/2020,Tamil Nadu,12746,1173
+13/04/2020,Telangana,,
+13/04/2020,Uttarakhand,1998,35
+13/04/2020,Uttar Pradesh,13287,558
+13/04/2020,West Bengal,2793,152
